@@ -18,3 +18,11 @@ Route::get('services', function () {
     return view('services');
 });
 
+Route::get('users/{id}/friends', function ($id) {
+    return $id;
+});
+
+Route::get('posts/{id?}', function ($id = 5) {
+    return $id;
+});
+

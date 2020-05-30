@@ -24,5 +24,16 @@ Route::get('users/{id}/friends', function ($id) {
 
 Route::get('posts/{id?}', function ($id = 5) {
     return $id;
-});
+}) -> where('id', '[0-9]+');
+
+Route::get('users/username', function ($username) {
+    return $username;
+}) -> where('username', '[A-Za-z]+');
+
+Route::get('posts/{id}/{slug}', function ($id, $slug) {
+    return $id;
+}) -> where([
+    'id' => '[0-9]+',
+    'slug' => '[A-Za-z]'
+]);
 
